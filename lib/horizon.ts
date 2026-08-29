@@ -31,6 +31,26 @@ export async function fetchNativeBalance(
   }
 }
 
+/** Asks Friendbot to create and fund the account. Throws with a readable message on failure. */
+export async function fundWithFriendbot(address: string): Promise<void> {
+  const res = await fetch(
+    `${FRIENDBOT_URL}?addr=${encodeURIComponent(address)}`,
+  );
+  if (res.ok) return;
+
+  // Friendbot answers errors as JSON problem details; fall back to the HTTP
+  // status line when the body isn't parseable JSON.
+  let detail = `${res.status} ${res.statusText}`;
+  const body = await res.text();
+  try {
+    const parsed = JSON.parse(body) as { detail?: string; title?: string };
+    detail = parsed.detail ?? parsed.title ?? detail;
+  } catch (err) {
+    if (!(err instanceof SyntaxError)) throw err;
+  }
+  throw new Error(`Friendbot refused to fund the account: ${detail}`);
+}
+
 export async function accountExists(address: string): Promise<boolean> {
   try {
     await horizon.loadAccount(address);

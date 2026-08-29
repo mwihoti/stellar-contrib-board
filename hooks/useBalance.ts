@@ -1,6 +1,6 @@
 "use client";
 
-import { fetchNativeBalance } from "@/lib/horizon";
+import { fetchNativeBalance, fundWithFriendbot } from "@/lib/horizon";
 import { useCallback, useEffect, useState } from "react";
 
 export interface BalanceState {
@@ -12,6 +12,10 @@ export interface BalanceState {
   /** human-readable fetch failure, only set when status is "error" */
   error: string | null;
   refresh: () => Promise<void>;
+  funding: boolean;
+  /** human-readable Friendbot failure */
+  fundingError: string | null;
+  fund: () => Promise<void>;
 }
 
 export function useBalance(address: string | null): BalanceState {
@@ -19,6 +23,8 @@ export function useBalance(address: string | null): BalanceState {
   const [xlm, setXlm] = useState<string | null>(null);
   const [subentries, setSubentries] = useState(0);
   const [error, setError] = useState<string | null>(null);
+  const [funding, setFunding] = useState(false);
+  const [fundingError, setFundingError] = useState<string | null>(null);
 
   const refresh = useCallback(async () => {
     if (!address) return;
@@ -46,16 +52,31 @@ export function useBalance(address: string | null): BalanceState {
     }
   }, [address]);
 
+  const fund = useCallback(async () => {
+    if (!address) return;
+    setFunding(true);
+    setFundingError(null);
+    try {
+      await fundWithFriendbot(address);
+      await refresh();
+    } catch (err) {
+      setFundingError(err instanceof Error ? err.message : String(err));
+    } finally {
+      setFunding(false);
+    }
+  }, [address, refresh]);
+
   useEffect(() => {
     if (!address) {
       setStatus("idle");
       setXlm(null);
       setSubentries(0);
       setError(null);
+      setFundingError(null);
       return;
     }
     void refresh();
   }, [address, refresh]);
 
-  return { status, xlm, subentries, error, refresh };
+  return { status, xlm, subentries, error, refresh, funding, fundingError, fund };
 }
