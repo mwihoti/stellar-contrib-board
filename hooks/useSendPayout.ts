@@ -9,6 +9,7 @@ import {
   preparePayout,
   submitSignedTransaction,
 } from "@/lib/payments";
+import { describeSubmitError } from "@/lib/errors";
 
 export type SendStatus =
   | { phase: "idle" }
@@ -77,9 +78,7 @@ export function useSendPayout(
           message:
             err instanceof PayoutBlockedError
               ? err.message
-              : err instanceof Error
-                ? err.message
-                : String(err),
+              : describeSubmitError(err),
         });
       }
     },

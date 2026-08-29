@@ -26,6 +26,18 @@ export function useBalance(address: string | null): BalanceState {
   const [funding, setFunding] = useState(false);
   const [fundingError, setFundingError] = useState<string | null>(null);
 
+  // Reset everything when the wallet address changes (connect, disconnect,
+  // or account switch inside Freighter), before the next fetch lands.
+  const [prevAddress, setPrevAddress] = useState<string | null>(address);
+  if (prevAddress !== address) {
+    setPrevAddress(address);
+    setStatus(address ? "loading" : "idle");
+    setXlm(null);
+    setSubentries(0);
+    setError(null);
+    setFundingError(null);
+  }
+
   const refresh = useCallback(async () => {
     if (!address) return;
     setStatus("loading");
@@ -67,15 +79,7 @@ export function useBalance(address: string | null): BalanceState {
   }, [address, refresh]);
 
   useEffect(() => {
-    if (!address) {
-      setStatus("idle");
-      setXlm(null);
-      setSubentries(0);
-      setError(null);
-      setFundingError(null);
-      return;
-    }
-    void refresh();
+    if (address) void refresh();
   }, [address, refresh]);
 
   return { status, xlm, subentries, error, refresh, funding, fundingError, fund };

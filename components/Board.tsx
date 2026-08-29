@@ -8,6 +8,7 @@ import WalletPanel from "@/components/WalletPanel";
 import NetworkBanner from "@/components/NetworkBanner";
 import BalancePanel from "@/components/BalancePanel";
 import ContributorTable from "@/components/ContributorTable";
+import TxStatusPanel from "@/components/TxStatusPanel";
 
 export default function Board() {
   const wallet = useWallet();
@@ -34,18 +35,7 @@ export default function Board() {
         payout={payout}
         sendBlocked={sendBlocked}
       />
-      {payout.status.phase !== "idle" && (
-        <p className="text-sm text-neutral-500">
-          {payout.status.phase === "checking" &&
-            `Checking accounts on Horizon for ${payout.status.login}…`}
-          {payout.status.phase === "signing" &&
-            "Waiting for you to review the transaction in Freighter…"}
-          {payout.status.phase === "submitting" && "Submitting to Horizon…"}
-          {payout.status.phase === "success" &&
-            `Sent — transaction ${payout.status.hash}`}
-          {payout.status.phase === "failure" && payout.status.message}
-        </p>
-      )}
+      <TxStatusPanel payout={payout} />
     </div>
   );
 }
