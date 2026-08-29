@@ -56,7 +56,10 @@ export default function WalletPanel({ wallet }: { wallet: WalletState }) {
   }
 
   return (
-    <div className="flex items-center justify-between gap-4 rounded-lg border border-neutral-200 p-4 text-sm dark:border-neutral-800">
+    <div
+      id="wallet-panel"
+      className="flex items-center justify-between gap-4 rounded-lg border border-neutral-200 p-4 text-sm dark:border-neutral-800"
+    >
       <span title={address} className="font-mono">
         {truncateAddress(address)}
       </span>

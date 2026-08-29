@@ -8,7 +8,10 @@ export default function BalancePanel({ balance }: { balance: BalanceState }) {
   if (status === "idle") return null;
 
   return (
-    <div className="rounded-lg border border-neutral-200 p-4 text-sm dark:border-neutral-800">
+    <div
+      id="balance-panel"
+      className="rounded-lg border border-neutral-200 p-4 text-sm dark:border-neutral-800"
+    >
       {status === "loading" && (
         <p className="text-neutral-500">Fetching balance from Horizon…</p>
       )}

@@ -33,7 +33,10 @@ export default function TxStatusPanel({ payout }: { payout: SendPayout }) {
 
   if (status.phase === "success") {
     return (
-      <div className="flex items-start justify-between gap-4 rounded-lg border border-green-300 bg-green-50 p-4 text-sm text-green-900 dark:border-green-800 dark:bg-green-950 dark:text-green-200">
+      <div
+        id="tx-status"
+        className="flex items-start justify-between gap-4 rounded-lg border border-green-300 bg-green-50 p-4 text-sm text-green-900 dark:border-green-800 dark:bg-green-950 dark:text-green-200"
+      >
         <div>
           <p className="font-medium">Payout to {status.login} confirmed</p>
           {status.createdAccount && (
@@ -61,7 +64,10 @@ export default function TxStatusPanel({ payout }: { payout: SendPayout }) {
   }
 
   return (
-    <div className="flex items-start justify-between gap-4 rounded-lg border border-red-300 bg-red-50 p-4 text-sm text-red-900 dark:border-red-800 dark:bg-red-950 dark:text-red-200">
+    <div
+      id="tx-status"
+      className="flex items-start justify-between gap-4 rounded-lg border border-red-300 bg-red-50 p-4 text-sm text-red-900 dark:border-red-800 dark:bg-red-950 dark:text-red-200"
+    >
       <div>
         <p className="font-medium">Payout to {status.login} failed</p>
         <p className="mt-1">{status.message}</p>

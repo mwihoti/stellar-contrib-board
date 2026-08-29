@@ -41,12 +41,14 @@ export default function Board() {
         <code className="font-mono">npx tsx scripts/fetch-contributors.ts</code>
         .
       </p>
+      {/* Above the table: with a couple hundred rows, feedback rendered
+          below it would be off-screen exactly when the user needs it. */}
+      <TxStatusPanel payout={payout} />
       <ContributorTable
         contributors={contributors}
         payout={payout}
         sendBlocked={sendBlocked}
       />
-      <TxStatusPanel payout={payout} />
     </div>
   );
 }
