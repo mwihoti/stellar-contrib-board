@@ -1,0 +1,29 @@
+# stellar-contrib-board — project rules
+
+## Scope
+
+- Testnet only. No mainnet code paths, no network switcher.
+- No smart contracts. This level is Stellar Classic payments only.
+- No auth, no database, no wallet-kit abstraction layer. Freighter directly.
+
+## Honesty constraints — these matter more than features
+
+- Payouts are manual and trust the pot holder. Never describe the app as
+  automated, trustless, or decentralized in code comments, UI copy, or the
+  README.
+- Contribution data is a point-in-time snapshot, not live. Label it as such
+  wherever shown.
+- Do not invent contributor Stellar addresses. Ever. An unmapped contributor
+  renders as disabled.
+
+## Error handling is the deliverable
+
+Every failure path must be reachable and produce a distinct, readable message.
+Prefer an explicit handled error over a silent catch or a generic toast. If you
+find yourself writing `catch {}`, stop and handle it.
+
+## Commits
+
+Commit after each numbered build step, with a real message describing what
+changed. Target 14–16 commits across the build. Never squash the history into a
+single commit.
