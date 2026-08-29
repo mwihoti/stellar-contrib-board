@@ -54,6 +54,7 @@ function ContributorRow({
 }) {
   const [amount, setAmount] = useState("");
   const { status, busy, send } = payout;
+  const { address } = contributor;
   const isThisRowPending =
     busy && "login" in status && status.login === contributor.login;
 
@@ -63,29 +64,38 @@ function ContributorRow({
     <tr className="border-b border-neutral-100 last:border-0 dark:border-neutral-900">
       <td className="px-4 py-3 font-medium">{contributor.login}</td>
       <td className="px-4 py-3">{contributor.commits}</td>
-      <td className="px-4 py-3 font-mono" title={contributor.address}>
-        {truncateAddress(contributor.address)}
+      <td className="px-4 py-3 font-mono" title={address ?? undefined}>
+        {address ? truncateAddress(address) : "—"}
       </td>
       <td className="px-4 py-3">
-        <div className="flex items-center gap-2">
-          <input
-            type="text"
-            inputMode="decimal"
-            placeholder="XLM"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            disabled={busy}
-            className="w-24 rounded-md border border-neutral-300 bg-transparent px-2 py-1.5 font-mono disabled:opacity-50 dark:border-neutral-700"
-          />
-          <button
-            onClick={() => send(contributor.login, contributor.address, amount)}
-            disabled={disabled}
-            title={sendBlocked ?? undefined}
-            className="rounded-md bg-indigo-600 px-3 py-1.5 font-medium text-white hover:bg-indigo-500 disabled:opacity-50"
+        {address ? (
+          <div className="flex items-center gap-2">
+            <input
+              type="text"
+              inputMode="decimal"
+              placeholder="XLM"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              disabled={busy}
+              className="w-24 rounded-md border border-neutral-300 bg-transparent px-2 py-1.5 font-mono disabled:opacity-50 dark:border-neutral-700"
+            />
+            <button
+              onClick={() => send(contributor.login, address, amount)}
+              disabled={disabled}
+              title={sendBlocked ?? undefined}
+              className="rounded-md bg-indigo-600 px-3 py-1.5 font-medium text-white hover:bg-indigo-500 disabled:opacity-50"
+            >
+              {isThisRowPending ? "Sending…" : "Send"}
+            </button>
+          </div>
+        ) : (
+          <span
+            className="text-neutral-400 dark:text-neutral-600"
+            title="Addresses are hand-maintained in data/addresses.json — this app never guesses a contributor's Stellar address."
           >
-            {isThisRowPending ? "Sending…" : "Send"}
-          </button>
-        </div>
+            No address on file
+          </span>
+        )}
       </td>
     </tr>
   );

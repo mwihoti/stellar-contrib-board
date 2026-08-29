@@ -3,7 +3,11 @@
 import { useWallet } from "@/hooks/useWallet";
 import { useBalance } from "@/hooks/useBalance";
 import { useSendPayout } from "@/hooks/useSendPayout";
-import { contributors } from "@/lib/contributors";
+import {
+  contributors,
+  snapshotGeneratedAt,
+  snapshotRepos,
+} from "@/lib/contributors";
 import WalletPanel from "@/components/WalletPanel";
 import NetworkBanner from "@/components/NetworkBanner";
 import BalancePanel from "@/components/BalancePanel";
@@ -30,6 +34,13 @@ export default function Board() {
       <WalletPanel wallet={wallet} />
       <NetworkBanner wallet={wallet} />
       <BalancePanel balance={balance} />
+      <p className="text-xs text-neutral-500">
+        Point-in-time snapshot, not live data: commits across{" "}
+        {snapshotRepos.length} stellar repos as of{" "}
+        {snapshotGeneratedAt.slice(0, 10)}. Regenerate with{" "}
+        <code className="font-mono">npx tsx scripts/fetch-contributors.ts</code>
+        .
+      </p>
       <ContributorTable
         contributors={contributors}
         payout={payout}
