@@ -1,0 +1,4 @@
+{
+  "__comment": "Hand-maintained mapping of GitHub login -> Stellar TESTNET G-address. Only add an address the contributor has published themselves, or your own test account's address for local testing. Never guess. Keys starting with __ are ignored by the app.",
+  "__example-format": "some-github-login: GDUWHPWNRT6FVPWV7O43B2LEPXUQY2MXV4TSS476SGKS3POOQ5PZ4IRD"
+}
