@@ -12,6 +12,12 @@ export interface WalletState {
   /** human-readable reason the last connect attempt failed */
   connectError: string | null;
   connect: () => Promise<void>;
+  /**
+   * Clears this app's state only. Freighter has no programmatic disconnect,
+   * so the site stays on the extension's allow list until the user removes it
+   * in Freighter's own settings.
+   */
+  disconnect: () => void;
 }
 
 export function useWallet(): WalletState {
@@ -55,5 +61,10 @@ export function useWallet(): WalletState {
     setAddress(res.address);
   }, []);
 
-  return { installed, address, connecting, connectError, connect };
+  const disconnect = useCallback(() => {
+    setAddress(null);
+    setConnectError(null);
+  }, []);
+
+  return { installed, address, connecting, connectError, connect, disconnect };
 }

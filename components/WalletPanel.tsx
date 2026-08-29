@@ -4,7 +4,8 @@ import type { WalletState } from "@/hooks/useWallet";
 import { truncateAddress } from "@/lib/format";
 
 export default function WalletPanel({ wallet }: { wallet: WalletState }) {
-  const { installed, address, connecting, connectError, connect } = wallet;
+  const { installed, address, connecting, connectError, connect, disconnect } =
+    wallet;
 
   if (installed === null) {
     return (
@@ -59,6 +60,13 @@ export default function WalletPanel({ wallet }: { wallet: WalletState }) {
       <span title={address} className="font-mono">
         {truncateAddress(address)}
       </span>
+      <button
+        onClick={disconnect}
+        title="Forgets the address in this app only. Freighter has no programmatic disconnect — to revoke access, remove this site in Freighter's settings."
+        className="rounded-md border border-neutral-300 px-3 py-1.5 hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-900"
+      >
+        Disconnect
+      </button>
     </div>
   );
 }
