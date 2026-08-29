@@ -1,9 +1,10 @@
 "use client";
 
 import type { WalletState } from "@/hooks/useWallet";
+import { truncateAddress } from "@/lib/format";
 
 export default function WalletPanel({ wallet }: { wallet: WalletState }) {
-  const { installed } = wallet;
+  const { installed, address, connecting, connectError, connect } = wallet;
 
   if (installed === null) {
     return (
@@ -33,9 +34,31 @@ export default function WalletPanel({ wallet }: { wallet: WalletState }) {
     );
   }
 
+  if (!address) {
+    return (
+      <div className="flex flex-col gap-2 rounded-lg border border-neutral-200 p-4 text-sm dark:border-neutral-800">
+        <div className="flex items-center justify-between gap-4">
+          <span className="text-neutral-500">Freighter detected.</span>
+          <button
+            onClick={connect}
+            disabled={connecting}
+            className="rounded-md bg-indigo-600 px-4 py-2 font-medium text-white hover:bg-indigo-500 disabled:opacity-50"
+          >
+            {connecting ? "Waiting for Freighter…" : "Connect wallet"}
+          </button>
+        </div>
+        {connectError && (
+          <p className="text-red-600 dark:text-red-400">{connectError}</p>
+        )}
+      </div>
+    );
+  }
+
   return (
-    <div className="rounded-lg border border-neutral-200 p-4 text-sm dark:border-neutral-800">
-      Freighter detected.
+    <div className="flex items-center justify-between gap-4 rounded-lg border border-neutral-200 p-4 text-sm dark:border-neutral-800">
+      <span title={address} className="font-mono">
+        {truncateAddress(address)}
+      </span>
     </div>
   );
 }
