@@ -1,6 +1,7 @@
 "use client";
 
 import { fetchNativeBalance, fundWithFriendbot } from "@/lib/horizon";
+import type { NativeBalance } from "@/lib/horizon";
 import { useCallback, useEffect, useState } from "react";
 
 export interface BalanceState {
@@ -38,31 +39,56 @@ export function useBalance(address: string | null): BalanceState {
     setFundingError(null);
   }
 
+  const applyBalance = useCallback((balance: NativeBalance) => {
+    if (balance.status === "unfunded") {
+      setStatus("unfunded");
+      setXlm(null);
+      setSubentries(0);
+    } else {
+      setStatus("funded");
+      setXlm(balance.xlm);
+      setSubentries(balance.subentries);
+    }
+  }, []);
+
+  const applyFetchError = useCallback((err: unknown) => {
+    setStatus("error");
+    setXlm(null);
+    setError(
+      `Could not reach Horizon testnet to fetch the balance: ${
+        err instanceof Error ? err.message : String(err)
+      }`,
+    );
+  }, []);
+
   const refresh = useCallback(async () => {
     if (!address) return;
     setStatus("loading");
     setError(null);
     try {
-      const balance = await fetchNativeBalance(address);
-      if (balance.status === "unfunded") {
-        setStatus("unfunded");
-        setXlm(null);
-        setSubentries(0);
-      } else {
-        setStatus("funded");
-        setXlm(balance.xlm);
-        setSubentries(balance.subentries);
-      }
+      applyBalance(await fetchNativeBalance(address));
     } catch (err) {
-      setStatus("error");
-      setXlm(null);
-      setError(
-        `Could not reach Horizon testnet to fetch the balance: ${
-          err instanceof Error ? err.message : String(err)
-        }`,
-      );
+      applyFetchError(err);
     }
-  }, [address]);
+  }, [address, applyBalance, applyFetchError]);
+
+  // Initial fetch per address. The render-time reset above already put the
+  // state into "loading", so nothing is set synchronously here.
+  useEffect(() => {
+    if (!address) return;
+    let stale = false;
+    fetchNativeBalance(address).then(
+      (balance) => {
+        if (!stale) applyBalance(balance);
+      },
+      (err: unknown) => {
+        if (!stale) applyFetchError(err);
+      },
+    );
+    return () => {
+      stale = true;
+    };
+  }, [address, applyBalance, applyFetchError]);
 
   const fund = useCallback(async () => {
     if (!address) return;
@@ -76,10 +102,6 @@ export function useBalance(address: string | null): BalanceState {
     } finally {
       setFunding(false);
     }
-  }, [address, refresh]);
-
-  useEffect(() => {
-    if (address) void refresh();
   }, [address, refresh]);
 
   return { status, xlm, subentries, error, refresh, funding, fundingError, fund };
