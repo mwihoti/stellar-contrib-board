@@ -1,6 +1,5 @@
 import {
   Asset,
-  BASE_FEE,
   Networks,
   NotFoundError,
   Operation,
@@ -10,8 +9,16 @@ import { accountExists, horizon } from "@/lib/horizon";
 
 export const NETWORK_PASSPHRASE = Networks.TESTNET;
 
-/** Fee for our single-operation transactions, in XLM (BASE_FEE is in stroops). */
-export const FEE_XLM = Number(BASE_FEE) / 10_000_000;
+/**
+ * Maximum fee bid per operation, in stroops — the network only charges the
+ * going rate, but bidding just BASE_FEE (100) risks tx_insufficient_fee under
+ * surge pricing. 0.01 XLM matches Stellar's BasicPay example app.
+ */
+const MAX_FEE_PER_OPERATION = "100000";
+export const FEE_XLM = Number(MAX_FEE_PER_OPERATION) / 10_000_000;
+
+/** Five minutes for the user to review and sign in Freighter before the transaction expires. */
+const TIMEBOUNDS_SECONDS = 300;
 
 /**
  * Minimum balance the network enforces on the sender:
@@ -100,11 +107,11 @@ export async function preparePayout(
       });
 
   const tx = new TransactionBuilder(source, {
-    fee: BASE_FEE,
+    fee: MAX_FEE_PER_OPERATION,
     networkPassphrase: NETWORK_PASSPHRASE,
   })
     .addOperation(operation)
-    .setTimeout(180)
+    .setTimeout(TIMEBOUNDS_SECONDS)
     .build();
 
   return { xdr: tx.toXDR(), createsAccount };

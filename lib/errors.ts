@@ -11,6 +11,8 @@ const TX_CODE_MESSAGES: Record<string, string> = {
     "The transaction used a stale sequence number — usually another transaction from this account went through in the meantime. Just try the send again.",
   tx_too_late:
     "The transaction expired before it reached the ledger (it sat unsigned for too long). Start the send again.",
+  tx_insufficient_fee:
+    "The network was busy and the transaction's fee bid was too low. Try the send again.",
 };
 
 const OP_CODE_MESSAGES: Record<string, string> = {

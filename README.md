@@ -112,6 +112,12 @@ the wallet, and Horizon `result_codes` (`op_no_destination`, `op_underfunded`,
 `op_low_reserve`, `tx_insufficient_balance`, `tx_bad_seq`, `tx_too_late`)
 mapped in `lib/errors.ts`.
 
+Transaction building follows the conventions of Stellar's
+[BasicPay example app](https://developers.stellar.org/docs/build/apps/example-application-tutorial/overview):
+a max fee bid of 0.01 XLM per operation (the network charges only the going
+rate), 5-minute timebounds so the user has time to review in Freighter, and
+the `createAccount` fallback for unfunded destinations.
+
 `scripts/smoke-chain.mts` exercises the chain layer end-to-end against live
 testnet: Friendbot funding, both send branches, all client-side blocks, and a
 real `tx_bad_seq`.
