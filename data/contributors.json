@@ -1,0 +1,1117 @@
+{
+  "generatedAt": "2026-08-29T19:18:40.250Z",
+  "repos": [
+    "stellar-cli",
+    "rs-soroban-sdk",
+    "js-stellar-sdk",
+    "soroban-examples",
+    "freighter",
+    "stellar-docs"
+  ],
+  "contributors": [
+    {
+      "login": "leighmcculloch",
+      "commits": 1219
+    },
+    {
+      "login": "piyalbasu",
+      "commits": 582
+    },
+    {
+      "login": "fnando",
+      "commits": 322
+    },
+    {
+      "login": "bartekn",
+      "commits": 257
+    },
+    {
+      "login": "briwylde08",
+      "commits": 220
+    },
+    {
+      "login": "ElliotFriend",
+      "commits": 213
+    },
+    {
+      "login": "Shaptic",
+      "commits": 195
+    },
+    {
+      "login": "aristidesstaffieri",
+      "commits": 172
+    },
+    {
+      "login": "sisuresh",
+      "commits": 144
+    },
+    {
+      "login": "thejollyrogers",
+      "commits": 138
+    },
+    {
+      "login": "2opremio",
+      "commits": 136
+    },
+    {
+      "login": "willemneal",
+      "commits": 124
+    },
+    {
+      "login": "elizabethengelman",
+      "commits": 117
+    },
+    {
+      "login": "kalepail",
+      "commits": 107
+    },
+    {
+      "login": "janewang",
+      "commits": 98
+    },
+    {
+      "login": "abuiles",
+      "commits": 92
+    },
+    {
+      "login": "chadoh",
+      "commits": 91
+    },
+    {
+      "login": "dmkozh",
+      "commits": 85
+    },
+    {
+      "login": "Ryang-21",
+      "commits": 81
+    },
+    {
+      "login": "jeesunikim",
+      "commits": 71
+    },
+    {
+      "login": "mootz12",
+      "commits": 63
+    },
+    {
+      "login": "tsachiherman",
+      "commits": 61
+    },
+    {
+      "login": "JFWooten4",
+      "commits": 61
+    },
+    {
+      "login": "graydon",
+      "commits": 59
+    },
+    {
+      "login": "jayz22",
+      "commits": 51
+    },
+    {
+      "login": "jonjove",
+      "commits": 51
+    },
+    {
+      "login": "acharb",
+      "commits": 49
+    },
+    {
+      "login": "JakeUrban",
+      "commits": 48
+    },
+    {
+      "login": "tamirms",
+      "commits": 45
+    },
+    {
+      "login": "sreuland",
+      "commits": 39
+    },
+    {
+      "login": "carstenjacobsen",
+      "commits": 39
+    },
+    {
+      "login": "dydt",
+      "commits": 35
+    },
+    {
+      "login": "philipliu",
+      "commits": 34
+    },
+    {
+      "login": "quietbits",
+      "commits": 32
+    },
+    {
+      "login": "CassioMG",
+      "commits": 30
+    },
+    {
+      "login": "mollykarcher",
+      "commits": 28
+    },
+    {
+      "login": "brson",
+      "commits": 27
+    },
+    {
+      "login": "kaankacar",
+      "commits": 27
+    },
+    {
+      "login": "chowbao",
+      "commits": 25
+    },
+    {
+      "login": "BlaineHeffron",
+      "commits": 24
+    },
+    {
+      "login": "aditya1702",
+      "commits": 22
+    },
+    {
+      "login": "overcat",
+      "commits": 21
+    },
+    {
+      "login": "nullstyle",
+      "commits": 21
+    },
+    {
+      "login": "actions-user",
+      "commits": 21
+    },
+    {
+      "login": "marcelosalloum",
+      "commits": 20
+    },
+    {
+      "login": "morleyzhi",
+      "commits": 20
+    },
+    {
+      "login": "urvisavla",
+      "commits": 17
+    },
+    {
+      "login": "vcarl",
+      "commits": 17
+    },
+    {
+      "login": "leofelix077",
+      "commits": 17
+    },
+    {
+      "login": "JiahuiWho",
+      "commits": 17
+    },
+    {
+      "login": "andywer",
+      "commits": 15
+    },
+    {
+      "login": "marwen-abid",
+      "commits": 15
+    },
+    {
+      "login": "christian-rogobete",
+      "commits": 14
+    },
+    {
+      "login": "irisli",
+      "commits": 14
+    },
+    {
+      "login": "namankumar",
+      "commits": 14
+    },
+    {
+      "login": "stellarsaur",
+      "commits": 11
+    },
+    {
+      "login": "tomerweller",
+      "commits": 11
+    },
+    {
+      "login": "johncanneto",
+      "commits": 11
+    },
+    {
+      "login": "kanwalpreetd",
+      "commits": 10
+    },
+    {
+      "login": "sagpatil",
+      "commits": 9
+    },
+    {
+      "login": "anataliocs",
+      "commits": 9
+    },
+    {
+      "login": "rice2000",
+      "commits": 9
+    },
+    {
+      "login": "vinamogit",
+      "commits": 7
+    },
+    {
+      "login": "psheth9",
+      "commits": 7
+    },
+    {
+      "login": "jedmccaleb",
+      "commits": 7
+    },
+    {
+      "login": "Myestery",
+      "commits": 7
+    },
+    {
+      "login": "rahul-soshte",
+      "commits": 7
+    },
+    {
+      "login": "tupui",
+      "commits": 7
+    },
+    {
+      "login": "karthikiyer56",
+      "commits": 7
+    },
+    {
+      "login": "lijamie98",
+      "commits": 7
+    },
+    {
+      "login": "amishas157",
+      "commits": 7
+    },
+    {
+      "login": "challet",
+      "commits": 6
+    },
+    {
+      "login": "poliha",
+      "commits": 6
+    },
+    {
+      "login": "pselle",
+      "commits": 6
+    },
+    {
+      "login": "ttboogie",
+      "commits": 6
+    },
+    {
+      "login": "mwtzzz",
+      "commits": 6
+    },
+    {
+      "login": "jesmarsc",
+      "commits": 6
+    },
+    {
+      "login": "anupsdf",
+      "commits": 5
+    },
+    {
+      "login": "accordeiro",
+      "commits": 5
+    },
+    {
+      "login": "Julian-dev28",
+      "commits": 5
+    },
+    {
+      "login": "alejomendoza",
+      "commits": 5
+    },
+    {
+      "login": "somazo",
+      "commits": 5
+    },
+    {
+      "login": "drebelsky",
+      "commits": 5
+    },
+    {
+      "login": "cjonas9",
+      "commits": 5
+    },
+    {
+      "login": "bboston7",
+      "commits": 5
+    },
+    {
+      "login": "jacekn",
+      "commits": 4
+    },
+    {
+      "login": "stellar-terraform",
+      "commits": 4
+    },
+    {
+      "login": "paulbellamy",
+      "commits": 4
+    },
+    {
+      "login": "criadoperez",
+      "commits": 4
+    },
+    {
+      "login": "ozgunozerk",
+      "commits": 4
+    },
+    {
+      "login": "brianebert",
+      "commits": 4
+    },
+    {
+      "login": "silence48",
+      "commits": 4
+    },
+    {
+      "login": "miguelnietoa",
+      "commits": 4
+    },
+    {
+      "login": "ymcrcat",
+      "commits": 4
+    },
+    {
+      "login": "KodeSage",
+      "commits": 4
+    },
+    {
+      "login": "Pfed-prog",
+      "commits": 4
+    },
+    {
+      "login": "mmazco",
+      "commits": 4
+    },
+    {
+      "login": "sydneynotthecity",
+      "commits": 4
+    },
+    {
+      "login": "TomMD",
+      "commits": 3
+    },
+    {
+      "login": "satyamz",
+      "commits": 3
+    },
+    {
+      "login": "dkcumming",
+      "commits": 3
+    },
+    {
+      "login": "pedro-pelicioni",
+      "commits": 3
+    },
+    {
+      "login": "pselden",
+      "commits": 3
+    },
+    {
+      "login": "franceccon",
+      "commits": 3
+    },
+    {
+      "login": "oceans404",
+      "commits": 3
+    },
+    {
+      "login": "xiv",
+      "commits": 3
+    },
+    {
+      "login": "marta-lokhova",
+      "commits": 3
+    },
+    {
+      "login": "destinyae",
+      "commits": 3
+    },
+    {
+      "login": "Mackenzie-OO7",
+      "commits": 3
+    },
+    {
+      "login": "fazzatti",
+      "commits": 3
+    },
+    {
+      "login": "Danasacco",
+      "commits": 3
+    },
+    {
+      "login": "alexvotofuture",
+      "commits": 3
+    },
+    {
+      "login": "mdqst",
+      "commits": 2
+    },
+    {
+      "login": "fdesjardins",
+      "commits": 2
+    },
+    {
+      "login": "NicoMoli",
+      "commits": 2
+    },
+    {
+      "login": "zachfedor",
+      "commits": 2
+    },
+    {
+      "login": "maximevtush",
+      "commits": 2
+    },
+    {
+      "login": "waldmatias",
+      "commits": 2
+    },
+    {
+      "login": "masonforest",
+      "commits": 2
+    },
+    {
+      "login": "Smephite",
+      "commits": 2
+    },
+    {
+      "login": "SirTyson",
+      "commits": 2
+    },
+    {
+      "login": "kknownymouss",
+      "commits": 2
+    },
+    {
+      "login": "scottym5797",
+      "commits": 2
+    },
+    {
+      "login": "ryanleecode",
+      "commits": 2
+    },
+    {
+      "login": "msfeldstein",
+      "commits": 2
+    },
+    {
+      "login": "grempe",
+      "commits": 2
+    },
+    {
+      "login": "corymsmith",
+      "commits": 2
+    },
+    {
+      "login": "Akuukis",
+      "commits": 2
+    },
+    {
+      "login": "eumemic",
+      "commits": 2
+    },
+    {
+      "login": "nano-o",
+      "commits": 2
+    },
+    {
+      "login": "kostimarko",
+      "commits": 2
+    },
+    {
+      "login": "Keeeeeeeks",
+      "commits": 2
+    },
+    {
+      "login": "saugaatallabadi",
+      "commits": 2
+    },
+    {
+      "login": "ThomasBrady",
+      "commits": 2
+    },
+    {
+      "login": "tolgayayci",
+      "commits": 2
+    },
+    {
+      "login": "alexisdowney1",
+      "commits": 2
+    },
+    {
+      "login": "torisamples",
+      "commits": 2
+    },
+    {
+      "login": "hypekostas",
+      "commits": 2
+    },
+    {
+      "login": "tmosleyIII",
+      "commits": 2
+    },
+    {
+      "login": "Alouzious",
+      "commits": 2
+    },
+    {
+      "login": "CaioTeixeira95",
+      "commits": 2
+    },
+    {
+      "login": "brunomlr",
+      "commits": 2
+    },
+    {
+      "login": "Danielvul",
+      "commits": 2
+    },
+    {
+      "login": "Eduard-Voiculescu",
+      "commits": 2
+    },
+    {
+      "login": "Frank-Fourier",
+      "commits": 2
+    },
+    {
+      "login": "MazurakIhor",
+      "commits": 2
+    },
+    {
+      "login": "rydurham",
+      "commits": 2
+    },
+    {
+      "login": "rawritude",
+      "commits": 1
+    },
+    {
+      "login": "rohansingh4",
+      "commits": 1
+    },
+    {
+      "login": "Row-Bear",
+      "commits": 1
+    },
+    {
+      "login": "gabrielrondon",
+      "commits": 1
+    },
+    {
+      "login": "teddav",
+      "commits": 1
+    },
+    {
+      "login": "famouswizard",
+      "commits": 1
+    },
+    {
+      "login": "wmypku",
+      "commits": 1
+    },
+    {
+      "login": "pamellix",
+      "commits": 1
+    },
+    {
+      "login": "Olexandr88",
+      "commits": 1
+    },
+    {
+      "login": "Benjtalkshow",
+      "commits": 1
+    },
+    {
+      "login": "ifropc",
+      "commits": 1
+    },
+    {
+      "login": "Dhanraj30",
+      "commits": 1
+    },
+    {
+      "login": "Abeeujah",
+      "commits": 1
+    },
+    {
+      "login": "heytdep",
+      "commits": 1
+    },
+    {
+      "login": "namdamdoi68-oss",
+      "commits": 1
+    },
+    {
+      "login": "cuiweiyuan",
+      "commits": 1
+    },
+    {
+      "login": "Ray-Escobar",
+      "commits": 1
+    },
+    {
+      "login": "cgorenflo",
+      "commits": 1
+    },
+    {
+      "login": "zackster",
+      "commits": 1
+    },
+    {
+      "login": "zachalam",
+      "commits": 1
+    },
+    {
+      "login": "wpalmeri",
+      "commits": 1
+    },
+    {
+      "login": "katopz",
+      "commits": 1
+    },
+    {
+      "login": "tobinbc",
+      "commits": 1
+    },
+    {
+      "login": "sergiolclem",
+      "commits": 1
+    },
+    {
+      "login": "sgehrman",
+      "commits": 1
+    },
+    {
+      "login": "silvestreh",
+      "commits": 1
+    },
+    {
+      "login": "Shadow-MMN",
+      "commits": 1
+    },
+    {
+      "login": "ScottyPoi",
+      "commits": 1
+    },
+    {
+      "login": "cah4a",
+      "commits": 1
+    },
+    {
+      "login": "celestialkylin",
+      "commits": 1
+    },
+    {
+      "login": "cmichi",
+      "commits": 1
+    },
+    {
+      "login": "yripper",
+      "commits": 1
+    },
+    {
+      "login": "efritze",
+      "commits": 1
+    },
+    {
+      "login": "kathyonu",
+      "commits": 1
+    },
+    {
+      "login": "kostekIV",
+      "commits": 1
+    },
+    {
+      "login": "leocagli",
+      "commits": 1
+    },
+    {
+      "login": "luchenhan",
+      "commits": 1
+    },
+    {
+      "login": "meinharrd",
+      "commits": 1
+    },
+    {
+      "login": "omahs",
+      "commits": 1
+    },
+    {
+      "login": "sonaye",
+      "commits": 1
+    },
+    {
+      "login": "alberto-crossmint",
+      "commits": 1
+    },
+    {
+      "login": "klakovsky",
+      "commits": 1
+    },
+    {
+      "login": "BatDroid",
+      "commits": 1
+    },
+    {
+      "login": "MisterTicot",
+      "commits": 1
+    },
+    {
+      "login": "cavanmflynn",
+      "commits": 1
+    },
+    {
+      "login": "daffl",
+      "commits": 1
+    },
+    {
+      "login": "didoarellano",
+      "commits": 1
+    },
+    {
+      "login": "nnsW3",
+      "commits": 1
+    },
+    {
+      "login": "HerveKoener",
+      "commits": 1
+    },
+    {
+      "login": "hunterpetersen",
+      "commits": 1
+    },
+    {
+      "login": "ichhim",
+      "commits": 1
+    },
+    {
+      "login": "IgorShadurin",
+      "commits": 1
+    },
+    {
+      "login": "jeffditullio",
+      "commits": 1
+    },
+    {
+      "login": "jhuntbach-bc",
+      "commits": 1
+    },
+    {
+      "login": "kylemccollom",
+      "commits": 1
+    },
+    {
+      "login": "methuz",
+      "commits": 1
+    },
+    {
+      "login": "nicolasassouad",
+      "commits": 1
+    },
+    {
+      "login": "RuneRogue",
+      "commits": 1
+    },
+    {
+      "login": "city-furniture",
+      "commits": 1
+    },
+    {
+      "login": "RabeaWahab",
+      "commits": 1
+    },
+    {
+      "login": "robertDurst",
+      "commits": 1
+    },
+    {
+      "login": "mysteryon88",
+      "commits": 1
+    },
+    {
+      "login": "matiassequeira",
+      "commits": 1
+    },
+    {
+      "login": "dranov",
+      "commits": 1
+    },
+    {
+      "login": "unboxedtype",
+      "commits": 1
+    },
+    {
+      "login": "MarcoCiaramella",
+      "commits": 1
+    },
+    {
+      "login": "SmolinPavel",
+      "commits": 1
+    },
+    {
+      "login": "vladdoster",
+      "commits": 1
+    },
+    {
+      "login": "iSwapna",
+      "commits": 1
+    },
+    {
+      "login": "stevedylandev",
+      "commits": 1
+    },
+    {
+      "login": "scuba323",
+      "commits": 1
+    },
+    {
+      "login": "shawnmuggle",
+      "commits": 1
+    },
+    {
+      "login": "mesayanroy",
+      "commits": 1
+    },
+    {
+      "login": "srhgeorgia",
+      "commits": 1
+    },
+    {
+      "login": "Roman-Liquify",
+      "commits": 1
+    },
+    {
+      "login": "fasteater",
+      "commits": 1
+    },
+    {
+      "login": "KoxyG",
+      "commits": 1
+    },
+    {
+      "login": "hanseartic",
+      "commits": 1
+    },
+    {
+      "login": "oamelunge",
+      "commits": 1
+    },
+    {
+      "login": "nbayindirli",
+      "commits": 1
+    },
+    {
+      "login": "NOWNodes",
+      "commits": 1
+    },
+    {
+      "login": "GaryNodies",
+      "commits": 1
+    },
+    {
+      "login": "salaheldinsoliman",
+      "commits": 1
+    },
+    {
+      "login": "orbitlens",
+      "commits": 1
+    },
+    {
+      "login": "nataly-gb",
+      "commits": 1
+    },
+    {
+      "login": "matiascabello",
+      "commits": 1
+    },
+    {
+      "login": "joemicky",
+      "commits": 1
+    },
+    {
+      "login": "ilyaCertora",
+      "commits": 1
+    },
+    {
+      "login": "gglucass",
+      "commits": 1
+    },
+    {
+      "login": "cashkodes",
+      "commits": 1
+    },
+    {
+      "login": "alaningtrump",
+      "commits": 1
+    },
+    {
+      "login": "aaron-cottrell-vc",
+      "commits": 1
+    },
+    {
+      "login": "cnYui",
+      "commits": 1
+    },
+    {
+      "login": "tusharpamnani",
+      "commits": 1
+    },
+    {
+      "login": "travertischio",
+      "commits": 1
+    },
+    {
+      "login": "tomita-militaru",
+      "commits": 1
+    },
+    {
+      "login": "ziyliu",
+      "commits": 1
+    },
+    {
+      "login": "ire-and-curses",
+      "commits": 1
+    },
+    {
+      "login": "earrietadev",
+      "commits": 1
+    },
+    {
+      "login": "EHESPO",
+      "commits": 1
+    },
+    {
+      "login": "ducksquaddd",
+      "commits": 1
+    },
+    {
+      "login": "dpohr",
+      "commits": 1
+    },
+    {
+      "login": "credio-agent",
+      "commits": 1
+    },
+    {
+      "login": "ceydae",
+      "commits": 1
+    },
+    {
+      "login": "hydroxylase",
+      "commits": 1
+    },
+    {
+      "login": "Brunonascdev",
+      "commits": 1
+    },
+    {
+      "login": "brozorec",
+      "commits": 1
+    },
+    {
+      "login": "nodiesBlade",
+      "commits": 1
+    },
+    {
+      "login": "AshFrancis",
+      "commits": 1
+    },
+    {
+      "login": "atrichkov",
+      "commits": 1
+    },
+    {
+      "login": "armsves",
+      "commits": 1
+    },
+    {
+      "login": "Sixela33",
+      "commits": 1
+    },
+    {
+      "login": "wildework",
+      "commits": 1
+    },
+    {
+      "login": "maurotrigo",
+      "commits": 1
+    },
+    {
+      "login": "marvin-w",
+      "commits": 1
+    },
+    {
+      "login": "masch",
+      "commits": 1
+    },
+    {
+      "login": "lucasgil-arranz",
+      "commits": 1
+    },
+    {
+      "login": "soyfrien",
+      "commits": 1
+    },
+    {
+      "login": "leonmak",
+      "commits": 1
+    },
+    {
+      "login": "kushagra2jindal",
+      "commits": 1
+    },
+    {
+      "login": "khawlahssn",
+      "commits": 1
+    },
+    {
+      "login": "juanhurtado10",
+      "commits": 1
+    },
+    {
+      "login": "JoGetBlock",
+      "commits": 1
+    },
+    {
+      "login": "jamesbachini",
+      "commits": 1
+    },
+    {
+      "login": "HunterSides",
+      "commits": 1
+    },
+    {
+      "login": "huilenc",
+      "commits": 1
+    },
+    {
+      "login": "Damin3927",
+      "commits": 1
+    },
+    {
+      "login": "GideonBature",
+      "commits": 1
+    },
+    {
+      "login": "0xGeorgii",
+      "commits": 1
+    }
+  ]
+}
