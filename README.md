@@ -6,6 +6,9 @@ contributor, on the Stellar **testnet**. Built for a Level 1 "White Belt"
 challenge: the point of the project is the wallet integration and error
 handling, not the GitHub data.
 
+Live at https://mwihoti.github.io/stellar-contrib-board/ (you'll need the
+Freighter extension on Testnet to do anything beyond reading the board).
+
 Be clear about what this is: **payouts are manual and rest entirely on the
 judgment of whoever holds the wallet**. Nothing here is automated, trustless,
 or decentralized — it is one person clicking Send.
@@ -66,6 +69,13 @@ a real app state, and the payout above is a real testnet transaction. Using
 the actual Freighter extension by hand produces the same screens; for the
 payout row, `leighmcculloch` was temporarily mapped to a throwaway test
 address — see Limitations.
+
+## Deploying
+
+The app is a static export (`output: "export"`). The GitHub Pages deployment
+is built with `DEPLOY_TARGET=pages npm run build` (which sets the
+`/stellar-contrib-board` base path) and the `out/` directory pushed to the
+`gh-pages` branch.
 
 ## Contribution data
 
