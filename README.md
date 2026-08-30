@@ -126,6 +126,32 @@ is built with `DEPLOY_TARGET=pages npm run build` (which sets the
 - **Disconnect is app-side only**, as noted above.
 - **Testnet only.** There are no mainnet code paths.
 
+## Tests and CI
+
+`npm test` runs unit tests (Node's built-in runner) over the pure chain-layer
+logic: amount parsing, the reserve formula, and the Horizon result-code
+mapping. The GitHub Actions workflow lints, tests, builds, and deploys the
+static export to GitHub Pages on every push to master.
+
+![Test output](docs/screenshots/07-test-output.png)
+
+The pipeline run for the commit that introduced it:
+
+![CI pipeline](docs/screenshots/06-ci-pipeline.png)
+
+## Contract address (submission checklist only)
+
+The submission checklist asks for a contract deployment. Level 1 is Stellar
+Classic payments and this app uses no smart contracts, so to satisfy the
+checklist without pretending otherwise: a stock Stellar Asset Contract for a
+demo asset (`CONTRIB`) was deployed to testnet at
+
+`CCYKIUJW2RUGQM4WXGTFIUA2DSSOYDTDDXBJF5SDYH27LXWNP6352S3E`
+
+with a real interaction transaction calling its `symbol()` function:
+[`5dd1ea39…`](https://stellar.expert/explorer/testnet/tx/5dd1ea39ffa98dd2216040410470b442abc1c3b2de5e74070441c60eb3462ab6).
+The app itself never touches it.
+
 ## Error handling
 
 Every failure path produces a distinct, plain-English message: Freighter
