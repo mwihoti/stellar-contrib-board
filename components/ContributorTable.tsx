@@ -62,8 +62,15 @@ function ContributorRow({
 
   return (
     <tr className="border-b border-neutral-100 last:border-0 dark:border-neutral-900">
-      <td className="px-4 py-3 font-medium">{contributor.login}</td>
-      <td className="px-4 py-3">{contributor.commits}</td>
+      <td className="px-4 py-3 font-medium">
+        {contributor.login}
+        {contributor.demo && (
+          <span className="block text-xs font-normal text-neutral-400 dark:text-neutral-600">
+            maintainer&apos;s test account — not a stellar contributor
+          </span>
+        )}
+      </td>
+      <td className="px-4 py-3">{contributor.demo ? "—" : contributor.commits}</td>
       <td className="px-4 py-3 font-mono" title={address ?? undefined}>
         {address ? truncateAddress(address) : "—"}
       </td>

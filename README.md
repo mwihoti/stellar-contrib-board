@@ -31,9 +31,11 @@ database.
    ```
 3. Open http://localhost:3000, connect, and — if your test account is new —
    use the **Fund with Friendbot** button the app offers.
-4. To actually send a payout you need a row with an address. No real
-   contributor addresses ship with this repo (see Limitations), so map any
-   login from the leaderboard to a testnet account **you** control in
+4. To actually send a payout, use the labeled "payout-test-target" row at the
+   top of the board — it pays the maintainer's own test account, and exists so
+   the flow can be tried without inventing a contributor's address. No real
+   contributor addresses ship with this repo (see Limitations). To pay a
+   different account, map any login to a testnet account **you** control in
    `data/addresses.json`:
    ```json
    { "some-login-from-the-board": "G...your-second-test-account" }
