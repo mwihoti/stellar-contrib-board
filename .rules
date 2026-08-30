@@ -26,4 +26,42 @@ find yourself writing `catch {}`, stop and handle it.
 
 Commit after each numbered build step, with a real message describing what
 changed. Target 14–16 commits across the build. Never squash the history into a
-single commit.
+single commit, and never batch several steps into one commit to save time.
+
+## Style
+
+- TypeScript strict. No `any`.
+- Small components, no file over ~150 lines.
+- Do not add libraries beyond the stack listed without asking first.
+- Do not scaffold tests, CI, Docker, or deployment config unless asked.
+
+## No agent tells in the repo
+
+This is a public repo that will be read by people. Write it the way a person
+would.
+
+- Commits: no `Co-Authored-By` trailers, no `Generated with` lines, no tool
+  attribution of any kind. Plain imperative subject lines under ~60 chars
+  (`handle unfunded destination with createAccount`). No emoji, no
+  conventional-commit prefixes, no multi-paragraph bodies explaining what the
+  diff already says.
+- Comments: comment why, never what. Delete anything of the form
+  `// Step 3: fetch the balance`, `// Now we handle the error case`,
+  `// This function does X`. If the code needs narration to be readable,
+  rewrite the code.
+- No section-divider comment banners (`// ===== HELPERS =====`) and no
+  `// TODO: implement later` left in shipped code.
+- README and UI copy: plain declarative sentences. No emoji headers, no
+  "Getting Started" fluff, no bulleted feature lists padded with adjectives,
+  no "This project leverages...". Describe what it does and how to run it.
+- No boilerplate that wasn't asked for: no LICENSE, CONTRIBUTING,
+  CODE_OF_CONDUCT, or badge rows. No `.env.example` for env vars that don't
+  exist.
+- Variable naming: match the conventions already in the file. Don't rename
+  existing things to be "clearer" mid-task.
+
+## When uncertain
+
+Ask rather than assume — particularly on Freighter API shapes, Horizon
+response fields, and stroop/XLM unit conversion. A wrong guess in any of those
+produces a bug that looks like a wallet problem and costs an hour to find.
