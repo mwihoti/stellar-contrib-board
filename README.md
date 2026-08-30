@@ -43,6 +43,15 @@ database.
 
 ## Screenshots
 
+The full flow on the live deployment, captured by hand with the real Freighter
+extension: connected wallet, balance after the send, and a confirmed payout
+([this transaction](https://stellar.expert/explorer/testnet/tx/df50813dddf5a25d52a946de942e138d8049078aa61064c9898330c674cc0815))
+that also created the destination account, since it didn't exist yet:
+
+![Live payout on the deployed app](docs/screenshots/00-live-payout.png)
+
+The close-ups below show the individual states.
+
 Connected state (truncated address; disconnect is app-side only — Freighter
 has no programmatic disconnect, so the site stays on its allow list until you
 remove it in the extension's settings):
@@ -63,14 +72,13 @@ check, enforced client-side before anything is signed:
 
 ![Blocked by reserve check](docs/screenshots/04-blocked-reserve.png)
 
-How these were captured: `scripts/screenshots.mts` drives the real app in
-headless Chromium with a stub that answers `@stellar/freighter-api`'s
+How the close-ups were captured: `scripts/screenshots.mts` drives the real
+app in headless Chromium with a stub that answers `@stellar/freighter-api`'s
 messaging protocol using a throwaway testnet keypair (the extension popup
 can't run headless). The app code is unaware of the stub, every state shown is
-a real app state, and the payout above is a real testnet transaction. Using
-the actual Freighter extension by hand produces the same screens; for the
-payout row, `leighmcculloch` was temporarily mapped to a throwaway test
-address — see Limitations.
+a real app state, and both payouts pictured on this page are real testnet
+transactions. For the harness run, `leighmcculloch` was temporarily mapped to
+a throwaway test address — see Limitations.
 
 ## Deploying
 
