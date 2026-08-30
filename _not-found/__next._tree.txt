@@ -1,2 +1,2 @@
-:HL["/stellar-contrib-board/_next/static/chunks/2l_rf11zb_go_.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"G4KUSbZKK7R6KI1fm9OvI"}
+:HL["/stellar-contrib-board/_next/static/chunks/25p_o5cdkd8qc.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"gEQesoB03ThPX--DzVJjx"}
