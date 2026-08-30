@@ -26,6 +26,9 @@ interface GhContributor {
   type: string;
 }
 
+// Service accounts GitHub reports with type "User" rather than "Bot".
+const EXCLUDED_LOGINS = new Set(["actions-user"]);
+
 async function fetchRepoContributors(repo: string): Promise<GhContributor[]> {
   const all: GhContributor[] = [];
   let url: string | null =
@@ -65,7 +68,9 @@ async function main() {
     // The endpoint reports commit counts on the default branch as
     // "contributions". Bots (dependabot etc.) and anonymous entries are not
     // people we'd ever pay, so they stay out of the leaderboard.
-    const humans = contributors.filter((c) => c.login && c.type !== "Bot");
+    const humans = contributors.filter(
+      (c) => c.login && c.type !== "Bot" && !EXCLUDED_LOGINS.has(c.login),
+    );
     for (const c of humans) {
       totals.set(c.login!, (totals.get(c.login!) ?? 0) + c.contributions);
     }
