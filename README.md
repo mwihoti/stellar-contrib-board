@@ -8,6 +8,7 @@ handling, not the GitHub data.
 
 Live at https://mwihoti.github.io/stellar-contrib-board/ (you'll need the
 Freighter extension on Testnet to do anything beyond reading the board).
+Demo video: https://canva.link/gul93rr99cajuxw
 
 Be clear about what this is: **payouts are manual and rest entirely on the
 judgment of whoever holds the wallet**. Nothing here is automated, trustless,
@@ -71,6 +72,11 @@ What the user sees when a send is blocked — here the minimum-balance reserve
 check, enforced client-side before anything is signed:
 
 ![Blocked by reserve check](docs/screenshots/04-blocked-reserve.png)
+
+The layout on a phone-sized viewport (390px) — the panels stack and the table
+scrolls horizontally:
+
+![Mobile viewport](docs/screenshots/05-mobile.png)
 
 How the close-ups were captured: `scripts/screenshots.mts` drives the real
 app in headless Chromium with a stub that answers `@stellar/freighter-api`'s
