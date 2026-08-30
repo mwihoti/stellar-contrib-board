@@ -135,7 +135,7 @@ static export to GitHub Pages on every push to master.
 
 ![Test output](docs/screenshots/07-test-output.png)
 
-The pipeline run for the commit that introduced it:
+The Actions history — the ci runs and the Pages deployments they triggered:
 
 ![CI pipeline](docs/screenshots/06-ci-pipeline.png)
 
